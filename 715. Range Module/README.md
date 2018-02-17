@@ -18,3 +18,4 @@ queryRange(16, 17): true (The number 16 in [16, 17) is still being tracked, desp
 3. queryRange(left,right):检查[left,right)这个区间内的数据是否被追踪
 ### 解题思路
 用treeMap来保存追踪数据
+addRange和removeRange的时间复杂度是O(n),queryRange的时间复杂度是O(logn)
