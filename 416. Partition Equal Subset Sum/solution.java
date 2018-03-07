@@ -19,4 +19,18 @@ class Solution {
         }
         return dp[target];
     }
+    //求一个数组的最长的增序列的长度
+    public static int getLongestS(int[] nums){
+        //定义状态：dp[i]代表以nums[i]结尾的最长子序列长度
+        int[] dp = new int[nums.length];
+        dp[0] = 1;
+        for(int i = 1;i < nums.length;i++){
+            for(int j = 0;j < i;j++){
+                if(nums[i] > nums[j]){
+                    dp[i] = Math.max(dp[i],dp[j]+1);
+                }
+            }
+        }
+        return dp[nums.length-1];
+    }
 }
